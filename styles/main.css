@@ -1,0 +1,293 @@
+:root {
+  /* **** primary colours **** */
+  --clr-green-dark: darkgreen;
+  --clr-green-light: lightgreen;
+  --clr-red-darkest: rgb(90, 0, 0);
+  --clr-red-dark: darkred;
+  --clr-red-mid: rgb(255, 0, 0);
+  --clr-red-light: tomato;
+  --clr-yellow-dark: goldenrod;
+  --clr-yellow-light: yellow;
+  --clr-blue-dark: darkblue;
+  --clr-blue-light: lightskyblue;
+  /* **** greys **** */
+  --clr-black: rgb(10, 10, 15);
+  --clr-grey-dark: rgb(21, 21, 25);
+  --clr-grey-mid: #808080;
+  --clr-grey-light: lightgrey;
+  --clr-white: #ddf;
+
+  /* **** effects **** */
+  --transition: 0.15s;
+
+  /* **** text **** */
+  --letter-spacing: 0.15rem;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 2.5vw;
+  box-sizing: border-box;
+  background-image: url("../images/darknoise.png");
+  background-size: 20px;
+}
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/* ============ START game interface controls ============ */
+
+/* hide the default checkbox off screen so it is 
+   still available to screen readers & keyboard tab */
+.checkbox {
+  position: absolute;
+  left: -9999px;
+}
+/* here we style the label element of the input checkbox
+you can do pretty much anything you want */
+#power-switch {
+  display: flex;
+  position: relative;
+  /* height: 5px; */
+  /* width: 5px; */
+  margin-top: 2%;
+  padding: 5%;
+  color: var(--clr-white);
+  background-image: radial-gradient(
+    var(--clr-red-dark),
+    var(--clr-red-dark) 100%
+  );
+  border-radius: 100%;
+  border: 2px solid rgb(92, 92, 92);
+  cursor: pointer;
+  user-select: none;
+  transition: var(--transition);
+}
+
+input:checked + #power-switch {
+  background-image: radial-gradient(
+    var(--clr-red-light),
+    var(--clr-red-dark) 60%,
+    var(--clr-red-dark) 100%
+  );
+  border: 2px solid rgb(255, 145, 0);
+}
+
+/* ============ slider toggle switch ============ */
+/* toggle in label designing */
+.toggle {
+  position: relative;
+  display: inline-block;
+  /* margin-bottom: 2%; */
+  text-align: center;
+  color: white;
+  width: 40%;
+  height: 10px;
+  background-color: var(--clr-red-dark);
+  border-radius: 30px;
+  border: 2px solid rgb(189, 189, 189);
+  cursor: pointer;
+}
+
+/* After slide changes */
+.toggle:after {
+  content: "";
+  position: absolute;
+  width: 15%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: rgb(199, 199, 199);
+  top: 0px;
+  left: 0px;
+  transition: var(--transition);
+}
+
+/* Checkbox checked effect */
+.checkbox:checked + .toggle::after {
+  left: 85%;
+}
+
+/* Checkbox checked toggle label bg color */
+.checkbox:checked + .toggle {
+  background-color: var(--clr-green-dark);
+}
+
+/* text under the power button */
+#power-p {
+  color: var(--clr-grey-light);
+  font-weight: bold;
+  letter-spacing: var(--letter-spacing);
+}
+
+/* text under the score display */
+#score-p {
+  color: var(--clr-grey-light);
+  font-weight: bold;
+  letter-spacing: var(--letter-spacing);
+  margin-bottom: 4%;
+}
+
+/* text under the strict slider */
+#strict-p {
+  color: var(--clr-grey-light);
+  font-weight: bold;
+  letter-spacing: var(--letter-spacing);
+  margin-bottom: 4%;
+}
+
+/* ============ LED Score Display ============ */
+#center-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 90%;
+}
+.led {
+  display: flex;
+  padding: 0 2%;
+  height: 100%;
+  width: 40%;
+  background-color: var(--clr-red-darkest);
+  color: var(--clr-red-light);
+  justify-content: center;
+  text-justify: auto;
+  align-items: center;
+  text-align: center;
+  font-size: 200%;
+  letter-spacing: 0.25rem;
+  user-select: none;
+}
+
+/* ============ Play  Button ============ */
+#play-btn-label {
+  position: relative;
+  display: flex;
+  cursor: pointer;
+  height: 100%;
+  width: 25%;
+  padding: 0 4%;
+  justify-content: center;
+  align-items: center;
+  color: var(--clr-white);
+  font-weight: bold;
+  letter-spacing: var(--letter-spacing);
+  background-color: var(--clr-green-dark);
+  box-shadow: 2px 2px var(--clr-red-darkest) inset,
+    -2px -2px var(--clr-red-darkest) inset;
+  border-radius: 4px;
+  transition: var(--transition);
+}
+
+#play-btn-label:before {
+  content: "play";
+}
+
+#play-btn:checked + #play-btn-label:before {
+  content: "stop";
+  background-color: var(--clr-red-dark);
+  padding: 10% 5%;
+  border-radius: 4px;
+}
+/* ============ END game interface controls ============ */
+
+/* ============ game interface main structure ============ */
+/* the pads, circles, shapes etc. */
+
+.game-container {
+  display: grid;
+  position: relative;
+  place-content: center;
+  background-color: var(--clr-black);
+  height: 100vw;
+  max-width: 500px;
+  max-height: 500px;
+  margin: 0 auto;
+  border-radius: 100%;
+  box-shadow: 1px 1px 2px 2px black inset, -1px -1px 2px 2px black inset;
+}
+
+.pad-container {
+  display: inline-block;
+  position: relative;
+  height: 90vw;
+  width: 90vw;
+  max-height: 450px;
+  max-width: 450px;
+  border-radius: 100%;
+  background-color: var(--clr-black);
+}
+#top-left {
+  position: absolute;
+  background-color: var(--clr-green-dark);
+  height: 50%;
+  width: 50%;
+  border-radius: 100% 0 0 0%;
+  box-shadow: 2px 2px 5px rgb(0, 66, 0) inset, -0px -1px 1px rgb(0, 66, 0) inset,
+    -1px -0px 1px rgb(0, 66, 0) inset;
+}
+#top-right {
+  position: absolute;
+  background-color: var(--clr-red-dark);
+  height: 50%;
+  width: 50%;
+  transform: translateX(100%);
+  border-radius: 0 100% 0 0;
+  box-shadow: -2px 2px 5px rgb(88, 10, 10) inset,
+    1px 0px 1px rgb(88, 10, 10) inset, 0px -1px 1px rgb(88, 10, 10) inset;
+}
+
+#bottom-left {
+  position: absolute;
+  background-color: var(--clr-yellow-dark);
+  height: 50%;
+  width: 50%;
+  transform: translateY(100%);
+  border-radius: 0 0 0 100%;
+  box-shadow: 2px -2px 5px rgb(124, 101, 0) inset,
+    0px 1px 1px rgb(124, 101, 0) inset, -1px 0px 1px rgb(124, 101, 0) inset;
+}
+#bottom-right {
+  position: absolute;
+  background-color: var(--clr-blue-dark);
+  height: 50%;
+  width: 50%;
+  transform: translate(100%, 100%);
+  border-radius: 0 0 100% 0;
+  box-shadow: -2px -2px 5px rgb(0, 2, 83) inset, 1px 1px 1px rgb(0, 2, 83) inset;
+}
+#inner-border {
+  position: relative;
+  display: block;
+  margin: 25% auto;
+  height: 50%;
+  width: 50%;
+  background-color: var(--clr-black);
+  border-radius: 100%;
+}
+#inner-circle {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10% 10%;
+  height: 80%;
+  width: 80%;
+  background: radial-gradient(
+    circle,
+    var(--clr-grey-mid) 0%,
+    var(--clr-grey-mid) 65%,
+    var(--clr-grey-dark) 100%
+  );
+
+  border-radius: 100%;
+}
+
+@media screen and (min-width: 700px) {
+  html {
+    font-size: 1rem;
+  }
+}
