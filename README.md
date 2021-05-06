@@ -30,8 +30,11 @@ This needs to be redesigned a bit better! Work to-do!
 
 Currently, the interface is responsive in size and is useable on small screens down to about 180px and
 upwards. The maximum size of the interface is 500px and does not grow larger. However, your screen can
-be as large as you like, we just thought that it wasn't comfortable to play if any bigger. If you want
-it for a huge screen with a huge interface, we can do this, just let us know and we'll make for you.
+be as large as you like, we just thought that it wasn't comfortable to play using a mouse if any bigger.
+If you want it for a huge screen with a huge interface, we can do this, just let us know and we'll make
+for you.
+
+Perhaps you want to release the game on a huge touch screen, this could be quite fun!
 
 __JavaScript Functionality__ WIP (Work In Progress)
 
