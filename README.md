@@ -19,3 +19,6 @@ __Strict__ - If turned on, the game is considerably harder! If the player gets t
 the score is set to zero and and the user has to start from the begining again. If it is not turned
 on and the player gets the sequence wrong, the score remains the same and the sequence is repeated
 and the player can try again!
+
+The game ends when the player successfully reproduces the complete sequence of flashes, currently
+set to 20, or the player throws the game at the wall, turns the game off, smashes it with hammer etc!
