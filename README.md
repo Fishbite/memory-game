@@ -11,7 +11,7 @@ continues.
 
 There are some game controls:
 
-_Power_ - this must be turned on to power up the game!
+__Power__ - this must be turned on to power up the game!
 
 _Play_ - the game starts when this is pressed
 
