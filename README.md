@@ -13,6 +13,6 @@ There are some game controls:
 
 __Power__ - this must be turned on to power up the game!
 
-_Play_ - the game starts when this is pressed
+__Play__ - the game starts when this is pressed
 
-_Strict_ - If turned on, the game is considerably harder!
+__Strict__ - If turned on, the game is considerably harder!
