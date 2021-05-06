@@ -23,4 +23,4 @@ so the player can try again!
 The game ends when the player successfully reproduces the complete sequence of flashes, currently
 set to 20, or the player throws the game at the wall, turns the game off, smashes it with hammer etc!
 
-##Current Status:
+## Current Status:
