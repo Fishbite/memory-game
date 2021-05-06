@@ -23,4 +23,16 @@ so the player can try again!
 The game ends when the player successfully reproduces the complete sequence of flashes, currently
 set to 20, or the player throws the game at the wall, turns the game off, smashes it with hammer etc!
 
-## Current Status:
+# Current Status:
+
+__Interface__ Completed, but we forgot to include the __play__ button and added one in a bit of a rush.
+This needs to be redesigned a bit better! Work to-do!
+
+Currently, the interface is responsive in size and is useable on small screens down to about 180px and
+upwards. The maximum size of the interface is 500px and does not grow larger. However, your screen can
+be as large as you like, we just thought that it wasn't comfortable to play if any bigger. If you want
+it for a huge screen with a huge interface, we can do this, just let us know and we'll make for you.
+
+__JavaScript Functionality__ WIP (Work In Progress)
+
+
