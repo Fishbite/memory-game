@@ -48,7 +48,7 @@ html {
 }
 /* here we style the label element of the input checkbox
 you can do pretty much anything you want */
-#power-switch {
+#powerBtn-label {
   display: flex;
   position: relative;
   /* height: 5px; */
@@ -67,13 +67,13 @@ you can do pretty much anything you want */
   transition: var(--transition);
 }
 
-input:checked + #power-switch {
+#powerBtn:checked + #powerBtn-label {
   background-image: radial-gradient(
     var(--clr-red-light),
     var(--clr-red-dark) 60%,
     var(--clr-red-dark) 100%
   );
-  border: 2px solid rgb(255, 145, 0);
+  border: 2px solid rgb(0, 195, 255);
 }
 
 /* ============ slider toggle switch ============ */
@@ -153,7 +153,7 @@ input:checked + #power-switch {
   background-color: var(--clr-red-darkest);
   color: var(--clr-red-light);
   justify-content: center;
-  text-justify: auto;
+  /* text-justify: auto; */
   align-items: center;
   text-align: center;
   font-size: 200%;
@@ -162,7 +162,7 @@ input:checked + #power-switch {
 }
 
 /* ============ Play  Button ============ */
-#play-btn-label {
+#playBtn-label {
   position: relative;
   display: flex;
   cursor: pointer;
@@ -181,11 +181,11 @@ input:checked + #power-switch {
   transition: var(--transition);
 }
 
-#play-btn-label:before {
+#playBtn-label:before {
   content: "play";
 }
 
-#play-btn:checked + #play-btn-label:before {
+#playBtn:checked + #playBtn-label:before {
   content: "stop";
   background-color: var(--clr-red-dark);
   padding: 10% 5%;
