@@ -132,8 +132,35 @@ bottomRight.addEventListener("click", (event) => {
   }
 });
 
+// *********** functions *********** \\
 function play() {
   console.log("playing");
+  resetDefaults();
+  for (let i = 0; i < 20; i++) {
+    gameSeq.push(Math.floor(Math.random() * 4) + 1);
+  }
+  compTurn = true;
+  intervalID = setInterval(gameTurn, 800);
+}
+function gameTurn() {
+  power = false;
+
+  if (numFlash == turn) {
+    clearInterval(intervalID);
+    compTurn = false;
+    clearColour();
+    power = true;
+  }
+  if (compTurn) {
+    clearColour();
+    setTimeout(() => {
+      if (gameSeq[numFlash] == 1) one();
+      if (gameSeq[numFlash] == 2) two();
+      if (gameSeq[numFlash] == 3) three();
+      if (gameSeq[numFlash] == 4) four();
+      numFlash++;
+    }, 200);
+  }
 }
 function check() {}
 function clearColour() {}
