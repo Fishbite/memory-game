@@ -35,7 +35,7 @@ powerBtn.addEventListener("click", (event) => {
   }
 });
 strictBtn.addEventListener("change", (event) => {
-  if (strictBtn.checked) {
+  if (strictBtn.checked == true) {
     strict = true;
   } else {
     strict = false;
@@ -162,8 +162,95 @@ function gameTurn() {
     }, 200);
   }
 }
-function check() {}
-function clearColour() {}
+
+function one() {
+  if (sound) {
+    let audio = document.getElementById("clip1");
+    audio.play();
+    console.log("clip1");
+  }
+  sound = true;
+  topLeft.style.backgroundColor = "lightgreen";
+}
+function two() {
+  if (sound) {
+    let audio = document.getElementById("clip2");
+    audio.play();
+    console.log("clip2");
+  }
+  sound = true;
+  topRight.style.backgroundColor = "tomato";
+}
+function three() {
+  if (sound) {
+    let audio = document.getElementById("clip3");
+    audio.play();
+    console.log("clip3");
+  }
+  sound = true;
+  bottomLeft.style.backgroundColor = "yellow";
+}
+function four() {
+  if (sound) {
+    let audio = document.getElementById("clip4");
+    audio.play();
+    console.log("clip4");
+  }
+  sound = true;
+  bottomRight.style.backgroundColor = "lightblue";
+}
+
+function check() {
+  if (playerSeq[playerSeq.length - 1] !== gameSeq[playerSeq.length - 1])
+    ok = false;
+  if (playerSeq.length == 20 && ok) winGame();
+  if (ok == false) {
+    flashColour();
+    score.innerHTML = "NO!";
+    setTimeout(() => {
+      score.innerHtml = turn;
+      clearColour();
+      if (strict) {
+        play();
+      } else {
+        compTurn = true;
+        numFlash = 0;
+        playerSeq = [];
+        ok = true;
+        intervalID - setInterval(gameTurn, 800);
+      }
+    }, 800);
+    sound = false;
+  }
+  if ((turn = playerSeq.length && ok && !win)) {
+    turn++;
+    playerSeq = [];
+    compTurn = true;
+    numFlash = 0;
+    score.innerHtml = turn;
+    intervalID = setInterval(gameTurn, 800);
+  }
+}
+
+function clearColour() {
+  topLeft.style.backgroundColor = "darkgreen";
+  topRight.style.backgroundColor = "darkred";
+  bottomLeft.style.backgroundColor = "goldenrod";
+  bottomRight.style.backgroundColor = "darkblue";
+}
+function flashColour() {
+  topLeft.style.backgroundColor = "lighgreen";
+  topRight.style.backgroundColor = "tomato";
+  bottomLeft.style.backgroundColor = "yello";
+  bottomRight.style.backgroundColor = "lightblue";
+}
+function winGame() {
+  flashColour();
+  score.innerHTML = "WIN!";
+  power = flase;
+  win = true;
+}
+
 function resetDefaults() {
   win = false;
   gameSeq = [];
