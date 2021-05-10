@@ -38,4 +38,4 @@ for you.
 
 Perhaps you want to release the game on a huge touch screen, this could be quite fun!
 
-**JavaScript Functionality** WIP (Work In Progress)
+**JavaScript Functionality** code completed, we just need to do some refactoring to minimise the number of repeated code
