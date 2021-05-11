@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Memory Game</title>
     <link rel="stylesheet" href="./styles/main.css" />
     <audio id='clip1' src="./audio/sound1.mp3"></audio>
     <audio id="clip2" src="./audio/sound2.mp3"></audio>
@@ -33,12 +33,17 @@
             <p></p>
 
               <div id="center-container">
+                <button id="playBtn">play</button>
+<!--                 
                 <input type="checkbox" id="playBtn" class="checkbox">
-                <label for="playBtn" id="playBtn-label"></label>
-
-                <div class="led" id="score" >me</div>
+                <label for="playBtn" id="playBtn-label"></label> -->
+                <div class="led-container">
+                  <div class="led" id="score" ></div>
+                  <p id="score-p">score</p>
               </div>
-              <p id="score-p">score</p>
+              
+                </div>
+                
 
             <input type="checkbox" id="strict"
                     class="checkbox" />

@@ -145,53 +145,40 @@ you can do pretty much anything you want */
   justify-content: space-around;
   height: 20%;
   width: 90%;
+  margin-bottom: 4%;
+}
+.led-container {
+  display: flex;
+  flex-direction: column;
+  height: 140%;
+  width: 40%;
+  text-align: center;
 }
 .led {
   display: flex;
   padding: 0 2%;
   height: 100%;
-  width: 40%;
+  width: 100%;
   background-color: var(--clr-red-darkest);
   color: var(--clr-red-light);
   justify-content: center;
-  /* text-justify: auto; */
   align-items: center;
   text-align: center;
-  font-size: 200%;
+  font-size: 150%;
   letter-spacing: 0.25rem;
   user-select: none;
 }
 
 /* ============ Play  Button ============ */
-#playBtn-label {
-  position: relative;
-  display: flex;
+#playBtn {
   cursor: pointer;
   height: 100%;
-  width: 25%;
-  padding: 0 4%;
-  justify-content: center;
-  align-items: center;
-  color: var(--clr-white);
+  width: 30%;
   font-weight: bold;
+  font-size: 2.5vw;
   letter-spacing: var(--letter-spacing);
-  background-color: var(--clr-green-dark);
-  box-shadow: 2px 2px var(--clr-red-darkest) inset,
-    -2px -2px var(--clr-red-darkest) inset;
-  border-radius: 4px;
-  transition: var(--transition);
 }
 
-#playBtn-label:before {
-  content: "play";
-}
-
-#playBtn:checked + #playBtn-label:before {
-  content: "stop";
-  background-color: var(--clr-red-dark);
-  padding: 10% 5%;
-  border-radius: 4px;
-}
 /* ============ END game interface controls ============ */
 
 /* ============ game interface main structure ============ */
@@ -293,6 +280,9 @@ you can do pretty much anything you want */
 
 @media screen and (min-width: 700px) {
   html {
+    font-size: 1rem;
+  }
+  #playBtn {
     font-size: 1rem;
   }
 }
