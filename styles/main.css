@@ -63,7 +63,7 @@ you can do pretty much anything you want */
   color: var(--clr-white);
   background-image: radial-gradient(
     var(--clr-red-dark),
-    var(--clr-red-dark) 100%
+    var(--clr-red-darkest) 100%
   );
   border-radius: 100%;
   border: 2px solid var(--clr-grey-lightest);
@@ -74,9 +74,9 @@ you can do pretty much anything you want */
 
 #powerBtn:checked + #powerBtn-label {
   background-image: radial-gradient(
-    circle at 50% 35%,
-    var(--clr-white) 2%,
-    var(--clr-red-light) 20%,
+    circle at 55% 35%,
+    var(--clr-white) 0.5%,
+    var(--clr-red-light) 10%,
     var(--clr-red-dark) 60%,
     var(--clr-red-dark) 100%
   );
