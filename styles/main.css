@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,700;1,700&display=swap");
+
 :root {
   /* **** primary colours **** */
   --clr-green-dark: darkgreen;
@@ -15,6 +18,7 @@
   --clr-grey-dark: rgb(21, 21, 25);
   --clr-grey-mid: #808080;
   --clr-grey-light: lightgrey;
+  --clr-grey-lightest: rgb(189, 189, 189);
   --clr-white: #ddf;
 
   /* **** effects **** */
@@ -30,6 +34,7 @@
 
 html {
   font-size: 2.5vw;
+  font-family: "Comfortaa", cursive;
   box-sizing: border-box;
   background-image: url("../images/darknoise.png");
   background-size: 20px;
@@ -61,7 +66,7 @@ you can do pretty much anything you want */
     var(--clr-red-dark) 100%
   );
   border-radius: 100%;
-  border: 2px solid rgb(92, 92, 92);
+  border: 2px solid var(--clr-grey-lightest);
   cursor: pointer;
   user-select: none;
   transition: var(--transition);
@@ -69,7 +74,9 @@ you can do pretty much anything you want */
 
 #powerBtn:checked + #powerBtn-label {
   background-image: radial-gradient(
-    var(--clr-red-light),
+    circle at 50% 35%,
+    var(--clr-white) 2%,
+    var(--clr-red-light) 20%,
     var(--clr-red-dark) 60%,
     var(--clr-red-dark) 100%
   );
@@ -88,13 +95,14 @@ you can do pretty much anything you want */
   height: 10px;
   background-color: var(--clr-red-dark);
   border-radius: 30px;
-  border: 2px solid rgb(189, 189, 189);
+  border: 2px solid var(--clr-grey-lightest);
   cursor: pointer;
 }
 
 /* After slide changes */
 .toggle:after {
   content: "";
+  text-align: end;
   position: absolute;
   width: 15%;
   height: 100%;
@@ -107,6 +115,7 @@ you can do pretty much anything you want */
 
 /* Checkbox checked effect */
 .checkbox:checked + .toggle::after {
+  content: "";
   left: 85%;
 }
 
@@ -167,6 +176,8 @@ you can do pretty much anything you want */
   font-size: 150%;
   letter-spacing: 0.25rem;
   user-select: none;
+  border: 2px solid var(--clr-grey-lightest);
+  border-radius: 2px;
 }
 
 /* ============ Play  Button ============ */
@@ -174,9 +185,16 @@ you can do pretty much anything you want */
   cursor: pointer;
   height: 100%;
   width: 30%;
+  color: var(--clr-grey-dark);
   font-weight: bold;
-  font-size: 2.5vw;
+  font-size: 3vw;
+  font-family: "Balsamiq Sans", cursive;
+  font-weight: 700;
+  font-style: italic;
+  text-transform: capitalize;
   letter-spacing: var(--letter-spacing);
+  border: 2px solid var(--clr-grey-lightest);
+  border-radius: 50%;
 }
 
 /* ============ END game interface controls ============ */
