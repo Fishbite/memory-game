@@ -185,7 +185,8 @@ you can do pretty much anything you want */
   cursor: pointer;
   height: 100%;
   width: 30%;
-  color: var(--clr-grey-dark);
+  background-color: var(--clr-grey-dark);
+  color: var(--clr-grey-lightest);
   font-weight: bold;
   font-size: 3vw;
   font-family: "Balsamiq Sans", cursive;
