@@ -110,7 +110,7 @@ function play() {
   for (let i = 0; i < 20; i++) {
     order.push(Math.floor(Math.random() * 4) + 1);
   }
-  // console.log(order);
+  //console.log("order", order.length);
   compTurn = true;
   intervalID = setInterval(gameTurn, 800);
 }
@@ -176,7 +176,7 @@ function check() {
   if (playerOrder[playerOrder.length - 1] !== order[playerOrder.length - 1])
     good = false;
 
-  if (playerOrder.length == 20 && good) winGame();
+  if (playerOrder.length == order.length && good) winGame();
 
   if (good == false) {
     flashColor();
