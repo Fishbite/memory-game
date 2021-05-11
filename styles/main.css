@@ -16,10 +16,16 @@
   /* **** greys **** */
   --clr-black: rgb(10, 10, 15);
   --clr-grey-dark: rgb(21, 21, 25);
-  --clr-grey-mid: #808080;
+  --clr-grey-shadow: rgb(100, 100, 100);
+  --clr-grey-mid: rgb(128, 128, 128);
   --clr-grey-light: lightgrey;
   --clr-grey-lightest: rgb(189, 189, 189);
   --clr-white: #ddf;
+  /* **** shadows **** */
+  --box-shadow: var(--clr-grey-shadow) 0px 0.5px 0px 1px,
+    var(--clr-grey-shadow) -0px 0.5px 0px 1px;
+  --box-shadow-tiny: var(--clr-grey-shadow) 0px 0.5px 0px 0px,
+    var(--clr-grey-shadow) -0px 0.5px 0px 0px;
 
   /* **** effects **** */
   --transition: 0.15s;
@@ -67,9 +73,11 @@ you can do pretty much anything you want */
   );
   border-radius: 100%;
   border: 2px solid var(--clr-grey-lightest);
+  box-shadow: var(--box-shadow);
   cursor: pointer;
   user-select: none;
   transition: var(--transition);
+  z-index: 10;
 }
 
 #powerBtn:checked + #powerBtn-label {
@@ -96,6 +104,7 @@ you can do pretty much anything you want */
   background-color: var(--clr-red-dark);
   border-radius: 30px;
   border: 2px solid var(--clr-grey-lightest);
+  box-shadow: var(--box-shadow);
   cursor: pointer;
 }
 
@@ -178,6 +187,7 @@ you can do pretty much anything you want */
   user-select: none;
   border: 2px solid var(--clr-grey-lightest);
   border-radius: 2px;
+  box-shadow: var(--box-shadow);
 }
 
 /* ============ Play  Button ============ */
@@ -196,6 +206,7 @@ you can do pretty much anything you want */
   letter-spacing: var(--letter-spacing);
   border: 2px solid var(--clr-grey-lightest);
   border-radius: 50%;
+  box-shadow: var(--box-shadow);
 }
 
 /* ============ END game interface controls ============ */
@@ -297,11 +308,26 @@ you can do pretty much anything you want */
   border-radius: 100%;
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 500px) {
   html {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
   #playBtn {
     font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 200px) {
+  .led {
+    box-shadow: var(--box-shadow-tiny);
+  }
+  .toggle {
+    box-shadow: var(--box-shadow-tiny);
+  }
+  #playBtn {
+    box-shadow: var(--box-shadow-tiny);
+  }
+  #powerBtn-label {
+    box-shadow: var(--box-shadow-tiny);
   }
 }
