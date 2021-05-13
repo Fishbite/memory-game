@@ -62,10 +62,12 @@ padContainer.addEventListener("click", (e) => {
       console.log(pad);
       playerOrder.push(pad);
       check();
-      if (pad == 1) one();
-      if (pad == 2) two();
-      if (pad == 3) three();
-      if (pad == 4) four();
+      playClip(pad);
+      flashPad(pad);
+      // if (pad == 1) one();
+      // if (pad == 2) two();
+      // if (pad == 3) three();
+      // if (pad == 4) four();
       if (!win) {
         console.log("No win! :P");
         setTimeout(() => {
@@ -99,49 +101,25 @@ function gameTurn() {
   if (compTurn) {
     clearColor();
     setTimeout(() => {
-      if (order[flash] == 1) one();
-      if (order[flash] == 2) two();
-      if (order[flash] == 3) three();
-      if (order[flash] == 4) four();
+      playClip(order[flash]);
+      flashPad(order[flash]);
       flash++;
     }, 200);
   }
 }
 
-function one() {
+function playClip(pad) {
   if (noise) {
-    let audio = document.getElementById("clip1");
+    let audio = document.getElementById(`clip${pad}`);
     audio.play();
   }
   noise = true;
-  topLeft.style.backgroundColor = "lightgreen";
 }
-
-function two() {
-  if (noise) {
-    let audio = document.getElementById("clip2");
-    audio.play();
-  }
-  noise = true;
-  topRight.style.backgroundColor = "tomato";
-}
-
-function three() {
-  if (noise) {
-    let audio = document.getElementById("clip3");
-    audio.play();
-  }
-  noise = true;
-  bottomLeft.style.backgroundColor = "yellow";
-}
-
-function four() {
-  if (noise) {
-    let audio = document.getElementById("clip4");
-    audio.play();
-  }
-  noise = true;
-  bottomRight.style.backgroundColor = "lightskyblue";
+function flashPad(pad) {
+  if (pad == 1) topLeft.style.backgroundColor = "lightgreen";
+  if (pad == 2) topRight.style.backgroundColor = "tomato";
+  if (pad == 3) bottomLeft.style.backgroundColor = "yellow";
+  if (pad == 4) bottomRight.style.backgroundColor = "lightskyblue";
 }
 
 function check() {
