@@ -16,7 +16,6 @@ const topLeft = document.querySelector("#top-left");
 const topRight = document.querySelector("#top-right");
 const bottomLeft = document.querySelector("#bottom-left");
 const bottomRight = document.querySelector("#bottom-right");
-const padContainer = document.querySelector("#pad-container");
 
 // ************ control button selectors ************
 const strictButton = document.querySelector("#strict");
@@ -52,26 +51,55 @@ startButton.addEventListener("click", (event) => {
     play();
   }
 });
-// event listener added to parent pad wrapper
-padContainer.addEventListener("click", (e) => {
-  const id = e.target.dataset.id;
+
+topLeft.addEventListener("click", (event) => {
+  console.log("clicked");
   if (on) {
-    // do something if the element has a dataset attr
-    if (id) {
-      let pad = parseInt(id, 10);
-      console.log(pad);
-      playerOrder.push(pad);
-      check();
-      if (pad == 1) one();
-      if (pad == 2) two();
-      if (pad == 3) three();
-      if (pad == 4) four();
-      if (!win) {
-        console.log("No win! :P");
-        setTimeout(() => {
-          clearColor();
-        }, 300);
-      }
+    console.log("on");
+    playerOrder.push(1);
+    check();
+    one();
+    if (!win) {
+      console.log("!win :)");
+      setTimeout(() => {
+        clearColor();
+      }, 300);
+    }
+  }
+});
+topRight.addEventListener("click", (event) => {
+  if (on) {
+    playerOrder.push(2);
+    check();
+    two();
+    if (!win) {
+      setTimeout(() => {
+        clearColor();
+      }, 300);
+    }
+  }
+});
+bottomLeft.addEventListener("click", (event) => {
+  if (on) {
+    playerOrder.push(3);
+    check();
+    three();
+    if (!win) {
+      setTimeout(() => {
+        clearColor();
+      }, 300);
+    }
+  }
+});
+bottomRight.addEventListener("click", (event) => {
+  if (on) {
+    playerOrder.push(4);
+    check();
+    four();
+    if (!win) {
+      setTimeout(() => {
+        clearColor();
+      }, 300);
     }
   }
 });
