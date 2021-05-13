@@ -64,10 +64,6 @@ padContainer.addEventListener("click", (e) => {
       check();
       playClip(pad);
       flashPad(pad);
-      // if (pad == 1) one();
-      // if (pad == 2) two();
-      // if (pad == 3) three();
-      // if (pad == 4) four();
       if (!win) {
         console.log("No win! :P");
         setTimeout(() => {
