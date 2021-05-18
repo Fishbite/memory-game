@@ -39,3 +39,6 @@ for you.
 Perhaps you want to release the game on a huge touch screen, this could be quite fun!
 
 **JavaScript Functionality** code completed, we just need to do some refactoring to minimise the quantity of repeated code
+**Refactoring complete** test phase now on. Testers being recruited on numerous different devices.
+
+**Tiny URL** https://tinyurl.com/yjrk97yx added for convenience of testers.
